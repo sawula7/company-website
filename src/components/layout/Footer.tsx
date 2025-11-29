@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Code2, Github, Linkedin, Twitter, Mail, MapPin, Phone } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail, MapPin, Phone } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,10 +10,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <Code2 className="h-8 w-8 text-primary-500" />
-              <span className="text-xl font-bold text-white">TechFlow</span>
-            </div>
+            <Link to="/" className="flex items-center space-x-3 group">
+              <img
+                src="/logo.svg"
+                alt="BeeTech Solutions Logo"
+                className="h-10 w-10 transition-transform group-hover:scale-105"
+              />
+              <span className="text-xl font-bold text-white">BeeTech Solutions</span>
+            </Link>
             <p className="text-sm text-gray-400">
               Transforming businesses through innovative software solutions and cutting-edge technology.
             </p>
@@ -115,7 +119,7 @@ export function Footer() {
 
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-sm text-gray-400">
-            &copy; {currentYear} TechFlow. All rights reserved.
+            &copy; {currentYear} BeeTech Solutions. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm">
             <a href="#" className="hover:text-primary-500 transition-colors">
