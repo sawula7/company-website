@@ -1,0 +1,58 @@
+import type { Testimonial } from '../types';
+
+export const testimonials: Testimonial[] = [
+  {
+    id: 'testimonial-1',
+    name: 'Jennifer Martinez',
+    role: 'CTO',
+    company: 'TechFlow Inc.',
+    content: 'Working with this team transformed our entire digital infrastructure. They delivered a scalable solution that exceeded our expectations and continues to drive our growth.',
+    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=400&fit=crop',
+    rating: 5,
+  },
+  {
+    id: 'testimonial-2',
+    name: 'Robert Anderson',
+    role: 'CEO',
+    company: 'FinanceHub',
+    content: 'The level of expertise and professionalism is unmatched. Our custom dashboard has revolutionized how we analyze financial data. Best investment we have made.',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop',
+    rating: 5,
+  },
+  {
+    id: 'testimonial-3',
+    name: 'Lisa Thompson',
+    role: 'Product Manager',
+    company: 'HealthCare Plus',
+    content: 'They built our telehealth platform from the ground up. The attention to security, compliance, and user experience was exceptional. Highly recommend!',
+    image: 'https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?w=400&h=400&fit=crop',
+    rating: 5,
+  },
+  {
+    id: 'testimonial-4',
+    name: 'James Wilson',
+    role: 'Founder',
+    company: 'ShopEasy',
+    content: 'Our e-commerce platform handles thousands of transactions daily without a hitch. The team\'s technical knowledge and support have been invaluable.',
+    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop',
+    rating: 5,
+  },
+  {
+    id: 'testimonial-5',
+    name: 'Amanda Lee',
+    role: 'Marketing Director',
+    company: 'BrandVision',
+    content: 'The redesign of our web presence was flawless. They understood our brand vision and created something truly beautiful and functional.',
+    image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop',
+    rating: 5,
+  },
+  {
+    id: 'testimonial-6',
+    name: 'Daniel Brown',
+    role: 'VP of Engineering',
+    company: 'DataStream',
+    content: 'Their cloud migration expertise saved us months of work. The transition was smooth, and our performance has improved dramatically.',
+    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop',
+    rating: 5,
+  },
+];
