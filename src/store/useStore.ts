@@ -10,6 +10,14 @@ interface AppState {
   setSelectedProjectCategory: (category: string) => void;
   selectedBlogCategory: string;
   setSelectedBlogCategory: (category: string) => void;
+  gdprConsent: {
+    given: boolean;
+    analyticsConsent: boolean;
+    marketingConsent: boolean;
+  };
+  acceptAllCookies: () => void;
+  acceptEssentialCookies: () => void;
+  setCustomConsent: (analytics: boolean, marketing: boolean) => void;
 }
 
 export const useStore = create<AppState>()(
@@ -41,6 +49,35 @@ export const useStore = create<AppState>()(
       selectedBlogCategory: 'All',
       setSelectedBlogCategory: (category) =>
         set({ selectedBlogCategory: category }),
+      gdprConsent: {
+        given: false,
+        analyticsConsent: false,
+        marketingConsent: false,
+      },
+      acceptAllCookies: () =>
+        set({
+          gdprConsent: {
+            given: true,
+            analyticsConsent: true,
+            marketingConsent: true,
+          },
+        }),
+      acceptEssentialCookies: () =>
+        set({
+          gdprConsent: {
+            given: true,
+            analyticsConsent: false,
+            marketingConsent: false,
+          },
+        }),
+      setCustomConsent: (analytics, marketing) =>
+        set({
+          gdprConsent: {
+            given: true,
+            analyticsConsent: analytics,
+            marketingConsent: marketing,
+          },
+        }),
     }),
     {
       name: 'app-storage',
