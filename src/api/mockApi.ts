@@ -98,11 +98,36 @@ export const mockApi = {
     email: string;
     company?: string;
     message: string;
+    recaptchaToken?: string;
   }): Promise<{ success: boolean; message: string }> {
     await delay(1500);
 
-    // Simulate success (in real app, this would send to backend)
-    console.log('Contact form submitted:', data);
+    // Log reCAPTCHA token status
+    if (data.recaptchaToken) {
+      console.log('Contact form submitted with reCAPTCHA token:', {
+        ...data,
+        recaptchaToken: data.recaptchaToken.substring(0, 20) + '...',
+      });
+    } else {
+      console.log('Contact form submitted without reCAPTCHA token:', data);
+    }
+
+    // In a real application, you would:
+    // 1. Send the recaptchaToken to your backend
+    // 2. Verify the token with Google's reCAPTCHA API using your secret key
+    // 3. Check the score (v3 returns a score from 0.0 to 1.0)
+    // 4. Proceed with form submission if verification passes
+    //
+    // Example backend verification (Node.js/Express):
+    // const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    //   body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`
+    // });
+    // const result = await response.json();
+    // if (result.success && result.score >= 0.5) {
+    //   // Process the form
+    // }
 
     return {
       success: true,
