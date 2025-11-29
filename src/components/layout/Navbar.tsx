@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Code2 } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 import { cn } from '../../utils/cn';
 
@@ -43,12 +43,16 @@ export function Navbar() {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
+          <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <Code2 className="h-8 w-8 text-primary-500 group-hover:text-primary-600 transition-colors" />
-              <div className="absolute inset-0 bg-primary-500/20 blur-xl rounded-full group-hover:bg-primary-500/30 transition-colors"></div>
+              <img
+                src="/logo.svg"
+                alt="BeeTech Solutions Logo"
+                className="h-10 w-10 md:h-12 md:w-12 transition-transform group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-primary-500/10 blur-lg rounded-full group-hover:bg-primary-500/20 transition-colors"></div>
             </div>
-            <span className="text-xl md:text-2xl font-bold gradient-text">TechFlow</span>
+            <span className="text-xl md:text-2xl font-bold gradient-text">BeeTech Solutions</span>
           </Link>
 
           {/* Desktop Navigation */}
