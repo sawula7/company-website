@@ -39,21 +39,6 @@ function Hero() {
               </Button>
             </Link>
           </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12">
-            {[
-              { value: '200+', label: 'Projects Delivered' },
-              { value: '50+', label: 'Happy Clients' },
-              { value: '15+', label: 'Team Members' },
-              { value: '7', label: 'Years Experience' },
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold gradient-text">{stat.value}</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">{stat.label}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
