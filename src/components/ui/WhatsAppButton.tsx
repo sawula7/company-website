@@ -17,7 +17,6 @@ export function WhatsAppButton() {
           width="30.667px"
           height="30.667px"
           viewBox="0 0 30.667 30.667"
-          style={{ enableBackground: 'new 0 0 30.667 30.667' }}
           xmlSpace="preserve"
           fill="#ffffff"
         >

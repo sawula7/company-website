@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
 import { WhatsAppButton } from '../ui/WhatsAppButton';
+import GDPRBanner from '../ui/GDPRBanner';
 
 interface LayoutProps {
   children: ReactNode;
@@ -14,6 +15,7 @@ export function Layout({ children }: LayoutProps) {
       <main className="flex-grow pt-16 md:pt-20">{children}</main>
       <Footer />
       <WhatsAppButton />
+      <GDPRBanner />
     </div>
   );
 }

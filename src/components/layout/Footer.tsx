@@ -131,15 +131,15 @@ export function Footer() {
             &copy; {currentYear} BeeTech Solutions. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm">
-            <a href="#" className="hover:text-primary-500 transition-colors">
+            <Link to="/privacy-policy" className="hover:text-primary-500 transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-primary-500 transition-colors">
+            </Link>
+            <Link to="/terms-of-service" className="hover:text-primary-500 transition-colors">
               Terms of Service
-            </a>
-            <a href="#" className="hover:text-primary-500 transition-colors">
+            </Link>
+            <Link to="/cookie-policy" className="hover:text-primary-500 transition-colors">
               Cookie Policy
-            </a>
+            </Link>
           </div>
         </div>
       </div>

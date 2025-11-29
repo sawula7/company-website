@@ -8,6 +8,9 @@ import {
   BlogPage,
   BlogPostPage,
   ContactPage,
+  PrivacyPolicyPage,
+  TermsOfServicePage,
+  CookiePolicyPage,
 } from './pages';
 
 function App() {
@@ -22,6 +25,9 @@ function App() {
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:id" element={<BlogPostPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+          <Route path="/cookie-policy" element={<CookiePolicyPage />} />
         </Routes>
       </Layout>
     </Router>
