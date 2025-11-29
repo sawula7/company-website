@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { FormEvent } from 'react';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { PageTransition } from '../components/layout/PageTransition';
@@ -30,8 +30,33 @@ export function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [toastOpen, setToastOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState<{ title: string; description: string; variant: 'default' | 'success' | 'error' }>({ title: '', description: '', variant: 'default' });
+  const [recaptchaReady, setRecaptchaReady] = useState(false);
 
   const [ref, isVisible] = useIntersectionObserver({ freezeOnceVisible: true });
+
+  const recaptchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+
+  // Initialize reCAPTCHA
+  useEffect(() => {
+    if (!recaptchaSiteKey) {
+      console.warn('reCAPTCHA site key not found. Form submission will work without reCAPTCHA verification.');
+      setRecaptchaReady(true);
+      return;
+    }
+
+    const loadRecaptcha = () => {
+      if (window.grecaptcha) {
+        window.grecaptcha.ready(() => {
+          setRecaptchaReady(true);
+        });
+      } else {
+        // Retry after a short delay if grecaptcha is not loaded yet
+        setTimeout(loadRecaptcha, 100);
+      }
+    };
+
+    loadRecaptcha();
+  }, [recaptchaSiteKey]);
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -56,6 +81,20 @@ export function ContactPage() {
     return Object.keys(newErrors).length === 0;
   };
 
+  const executeRecaptcha = async (): Promise<string | null> => {
+    if (!recaptchaSiteKey || !window.grecaptcha) {
+      return null;
+    }
+
+    try {
+      const token = await window.grecaptcha.execute(recaptchaSiteKey, { action: 'submit_contact_form' });
+      return token;
+    } catch (error) {
+      console.error('reCAPTCHA execution failed:', error);
+      return null;
+    }
+  };
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
@@ -63,14 +102,28 @@ export function ContactPage() {
       return;
     }
 
+    if (!recaptchaReady) {
+      setToastMessage({
+        title: 'Please wait',
+        description: 'Security verification is loading. Please try again in a moment.',
+        variant: 'error',
+      });
+      setToastOpen(true);
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
+      // Execute reCAPTCHA to get token
+      const recaptchaToken = await executeRecaptcha();
+
       const response = await mockApi.submitContactForm({
         name: formData.name,
         email: formData.email,
         company: formData.company,
         message: formData.message,
+        recaptchaToken: recaptchaToken || undefined,
       });
 
       if (response.success) {
@@ -282,6 +335,30 @@ export function ContactPage() {
                       {!isSubmitting && <Send className="mr-2 h-5 w-5" />}
                       Send Message
                     </Button>
+
+                    {recaptchaSiteKey && (
+                      <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
+                        This site is protected by reCAPTCHA and the Google{' '}
+                        <a
+                          href="https://policies.google.com/privacy"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline hover:text-primary-500"
+                        >
+                          Privacy Policy
+                        </a>{' '}
+                        and{' '}
+                        <a
+                          href="https://policies.google.com/terms"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline hover:text-primary-500"
+                        >
+                          Terms of Service
+                        </a>{' '}
+                        apply.
+                      </p>
+                    )}
                   </form>
                 </Card>
               </div>
