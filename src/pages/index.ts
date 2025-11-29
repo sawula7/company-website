@@ -5,3 +5,6 @@ export { AboutPage } from './AboutPage';
 export { BlogPage } from './BlogPage';
 export { BlogPostPage } from './BlogPostPage';
 export { ContactPage } from './ContactPage';
+export { PrivacyPolicyPage } from './PrivacyPolicyPage';
+export { TermsOfServicePage } from './TermsOfServicePage';
+export { CookiePolicyPage } from './CookiePolicyPage';

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useStore } from '../../store/useStore';
 import Button from './Button';
 import { X, Cookie, Settings } from 'lucide-react';
@@ -35,12 +36,12 @@ export default function GDPRBanner() {
                     We use cookies to enhance your browsing experience, analyze site traffic, and
                     personalize content. By clicking "Accept All", you consent to our use of
                     cookies.{' '}
-                    <a
-                      href="#"
+                    <Link
+                      to="/cookie-policy"
                       className="text-primary-600 dark:text-primary-400 hover:underline font-medium"
                     >
                       Learn more
-                    </a>
+                    </Link>
                   </p>
                 </div>
               </div>
