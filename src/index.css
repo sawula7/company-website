@@ -92,3 +92,68 @@ html {
 ::selection {
   @apply bg-primary-500 text-white;
 }
+
+/* WhatsApp Fixed Button */
+.fixed-btn-mobile {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 50;
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+.fixed-btn-mobile__whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.fixed-btn-mobile__whatsapp:hover {
+  background-color: #20BA5A;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+.fixed-btn-mobile__whatsapp:active {
+  transform: scale(0.95);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.7), 0 0 0 10px rgba(37, 211, 102, 0.1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .fixed-btn-mobile {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .fixed-btn-mobile__whatsapp {
+    width: 56px;
+    height: 56px;
+  }
+}
