@@ -74,6 +74,12 @@ export function Navbar() {
                 )}
               </Link>
             ))}
+            <Link
+              to="/contact"
+              className="ml-4 px-6 py-2.5 bg-primary-500 hover:bg-primary-600 text-white font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
+            >
+              Get Free Quote
+            </Link>
           </div>
 
           {/* Theme Toggle & Mobile Menu Button */}
@@ -111,6 +117,12 @@ export function Navbar() {
                   {link.name}
                 </Link>
               ))}
+              <Link
+                to="/contact"
+                className="block px-4 py-3 mt-2 bg-primary-500 hover:bg-primary-600 text-white font-semibold rounded-lg text-center transition-all duration-300"
+              >
+                Get Free Quote
+              </Link>
             </div>
           </div>
         )}
