@@ -242,11 +242,18 @@ export function ContactPage() {
                   </Card>
                 </div>
 
-                {/* Map Placeholder */}
+                {/* Google Map */}
                 <Card className="overflow-hidden p-0 h-64">
-                  <div className="w-full h-full bg-gradient-to-br from-primary-100 via-secondary-100 to-accent-100 dark:from-primary-950 dark:via-secondary-950 dark:to-accent-950 flex items-center justify-center">
-                    <MapPin className="h-16 w-16 text-primary-500 opacity-50" />
-                  </div>
+                  <iframe
+                    title="BeeTech Solutions Location"
+                    src="https://maps.google.com/maps?q=Welivita,+Kaduwela,+Sri+Lanka&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
                 </Card>
               </div>
 
