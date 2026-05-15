@@ -3,7 +3,7 @@ export function WhatsAppButton() {
     <div className="fixed-btn-mobile">
       <a
         className="fixed-btn-mobile__whatsapp"
-        href="https://api.whatsapp.com/send?phone=94777489034"
+        href="https://api.whatsapp.com/send?phone=94777924732"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat through Whatsapp"
