@@ -12,6 +12,7 @@ import {
   PrivacyPolicyPage,
   TermsOfServicePage,
   CookiePolicyPage,
+  PricingPage,
 } from './pages';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/terms-of-service" element={<TermsOfServicePage />} />
           <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
         </Routes>
       </Layout>
     </Router>

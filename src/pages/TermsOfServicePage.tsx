@@ -31,10 +31,10 @@ export function TermsOfServicePage() {
               }`}
             >
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Terms of <span className="gradient-text">Service</span>
+                Terms &amp; <span className="gradient-text">Conditions</span>
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-400">
-                Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                Please read these terms and conditions carefully before using our services.
               </p>
             </div>
           </div>
@@ -44,184 +44,165 @@ export function TermsOfServicePage() {
         <section className="section-padding bg-white dark:bg-gray-950">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto prose prose-lg dark:prose-invert">
-              <Section title="Agreement to Terms">
+
+              <Section title="1. Introduction">
                 <p>
-                  By accessing and using this website and our services, you accept and agree to be bound by
-                  the terms and conditions of this agreement. If you do not agree to these Terms of
-                  Service, please do not use our website or services.
+                  These Terms and Conditions outline the rules governing your use of the services
+                  offered by BeeTech Solutions. By accessing or engaging with our services, you
+                  confirm your acceptance of these terms. If you disagree with any part of these
+                  conditions, you are not permitted to use our services.
                 </p>
               </Section>
 
-              <Section title="Use of Services">
-                <p>You agree to use our services only for lawful purposes and in accordance with these Terms. You agree not to:</p>
+              <Section title="2. Services">
+                <p>BeeTech Solutions offers the following services:</p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Use our services in any way that violates applicable local, national, or international law</li>
-                  <li>Engage in any conduct that restricts or inhibits anyone's use or enjoyment of the services</li>
-                  <li>Attempt to gain unauthorized access to any portion of our services or systems</li>
-                  <li>Upload or transmit viruses, malware, or any other malicious code</li>
-                  <li>Use automated systems or software to extract data from our website (scraping)</li>
-                  <li>Impersonate or attempt to impersonate our company, employees, or other users</li>
-                  <li>Interfere with or disrupt the integrity or performance of our services</li>
+                  <li>Custom website development and design</li>
+                  <li>E-commerce website development</li>
+                  <li>WordPress development and customization</li>
+                  <li>UI/UX design services</li>
+                  <li>Website maintenance and support</li>
+                  <li>Web hosting and domain services</li>
                 </ul>
               </Section>
 
-              <Section title="Intellectual Property Rights">
+              <Section title="3. Payment Terms">
                 <p>
-                  All content on this website, including but not limited to text, graphics, logos, images,
-                  software, and code, is the property of our company or our licensors and is protected by
-                  copyright, trademark, and other intellectual property laws.
+                  <strong>Payment Schedule:</strong> A 50% deposit is required at the start of
+                  each project, with the outstanding balance payable upon completion and prior
+                  to the website going live.
                 </p>
                 <p>
-                  You may not reproduce, distribute, modify, create derivative works, publicly display, or
-                  exploit any content from our website without our prior written permission, except as
-                  allowed by fair use or as explicitly permitted by these Terms.
+                  <strong>Payment Methods:</strong> We accept bank transfers, PayPal, and all
+                  major credit cards. Payments must be made in USD or LKR as mutually agreed.
                 </p>
-              </Section>
-
-              <Section title="User Accounts">
                 <p>
-                  If you create an account on our website, you are responsible for maintaining the
-                  confidentiality of your account credentials and for all activities that occur under your
-                  account. You agree to:
-                </p>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li>Provide accurate, current, and complete information during registration</li>
-                  <li>Maintain and promptly update your account information</li>
-                  <li>Immediately notify us of any unauthorized use of your account</li>
-                  <li>Accept responsibility for all activities under your account</li>
-                </ul>
-                <p className="mt-4">
-                  We reserve the right to suspend or terminate your account if any information provided
-                  proves to be inaccurate, false, or misleading.
+                  <strong>Late Payments:</strong> Delays in payment may result in project
+                  postponements or suspension of services. A 5% late fee will be charged on
+                  any overdue amounts.
                 </p>
               </Section>
 
-              <Section title="Services and Deliverables">
+              <Section title="4. Project Timeline">
                 <p>
-                  We provide software development and related services as described on our website. Service
-                  details, timelines, and deliverables will be outlined in separate project agreements or
-                  statements of work.
+                  <strong>Project Duration:</strong> Timelines differ based on the complexity
+                  and scope of each project. A detailed schedule will be provided during the
+                  initial consultation.
                 </p>
                 <p>
-                  We reserve the right to modify, suspend, or discontinue any aspect of our services at any
-                  time. We will make reasonable efforts to notify you of significant changes to services
-                  you are actively using.
-                </p>
-              </Section>
-
-              <Section title="Payment Terms">
-                <p>
-                  If you purchase services from us, you agree to pay all fees and charges according to the
-                  pricing, payment terms, and billing policies in effect at the time. All fees are
-                  non-refundable unless otherwise stated in a separate agreement.
+                  <strong>Delays:</strong> While we aim to meet all agreed deadlines, delays
+                  may occasionally arise due to client feedback cycles, scope changes, or
+                  technical issues. We will communicate any such delays promptly.
                 </p>
                 <p>
-                  We reserve the right to change our pricing and payment terms at any time. Price changes
-                  will not affect services already purchased but will apply to future purchases.
+                  <strong>Extensions:</strong> Requests for project extensions are subject to
+                  approval and may attract additional costs.
                 </p>
               </Section>
 
-              <Section title="Limitation of Liability">
+              <Section title="5. Intellectual Property">
                 <p>
-                  To the maximum extent permitted by law, our company shall not be liable for any indirect,
-                  incidental, special, consequential, or punitive damages, or any loss of profits or
-                  revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or
-                  other intangible losses resulting from:
-                </p>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li>Your access to or use of (or inability to access or use) our services</li>
-                  <li>Any conduct or content of any third party on the services</li>
-                  <li>Unauthorized access, use, or alteration of your transmissions or content</li>
-                  <li>Any other matter relating to our services</li>
-                </ul>
-              </Section>
-
-              <Section title="Disclaimer of Warranties">
-                <p>
-                  Our services are provided "as is" and "as available" without warranties of any kind,
-                  either express or implied, including but not limited to implied warranties of
-                  merchantability, fitness for a particular purpose, or non-infringement.
+                  <strong>Client Ownership:</strong> Upon receipt of full payment, clients hold
+                  ownership of the final website design and content. We reserve the right to
+                  display completed work in our portfolio.
                 </p>
                 <p>
-                  We do not warrant that our services will be uninterrupted, secure, or error-free, or that
-                  any defects will be corrected. You use our services at your own risk.
+                  <strong>Third-Party Assets:</strong> Clients are responsible for ensuring
+                  they have the necessary rights to any third-party content, images, or assets
+                  incorporated into their website.
+                </p>
+                <p>
+                  <strong>Our Rights:</strong> Ownership of our proprietary code, frameworks,
+                  and development tools used throughout the project remains with BeeTech
+                  Solutions.
                 </p>
               </Section>
 
-              <Section title="Indemnification">
+              <Section title="6. Revisions and Changes">
                 <p>
-                  You agree to indemnify, defend, and hold harmless our company, its officers, directors,
-                  employees, and agents from and against any claims, liabilities, damages, losses, and
-                  expenses arising out of or in any way connected with your access to or use of our
-                  services, your violation of these Terms, or your violation of any rights of another
-                  person or entity.
+                  <strong>Included Revisions:</strong> Every project includes up to three
+                  rounds of revisions within the agreed scope. Additional revision requests
+                  beyond this may incur extra charges.
+                </p>
+                <p>
+                  <strong>Scope Changes:</strong> Substantial changes to the original project
+                  scope may require more time and budget. A revised quotation will be submitted
+                  for your approval before proceeding.
+                </p>
+                <p>
+                  <strong>Client Feedback:</strong> Timely feedback from clients is essential
+                  to keeping the project on schedule. Delays in providing feedback may impact
+                  the overall timeline.
                 </p>
               </Section>
 
-              <Section title="Third-Party Links and Services">
+              <Section title="7. Warranty and Support">
                 <p>
-                  Our website may contain links to third-party websites or services that are not owned or
-                  controlled by us. We have no control over and assume no responsibility for the content,
-                  privacy policies, or practices of any third-party websites or services.
+                  <strong>Warranty Period:</strong> We offer a 30-day warranty following
+                  project completion, covering bug fixes and minor adjustments.
                 </p>
                 <p>
-                  You acknowledge and agree that we shall not be responsible or liable for any damage or
-                  loss caused by your use of any third-party websites or services.
-                </p>
-              </Section>
-
-              <Section title="Termination">
-                <p>
-                  We may terminate or suspend your access to our services immediately, without prior notice
-                  or liability, for any reason, including without limitation if you breach these Terms.
+                  <strong>Ongoing Support:</strong> Continued maintenance and support packages
+                  are available at an additional cost.
                 </p>
                 <p>
-                  Upon termination, your right to use the services will immediately cease. All provisions
-                  of these Terms which by their nature should survive termination shall survive, including
-                  ownership provisions, warranty disclaimers, indemnity, and limitations of liability.
+                  <strong>Limitations:</strong> Our warranty does not cover issues stemming
+                  from third-party services, hosting complications, or modifications made by
+                  the client.
                 </p>
               </Section>
 
-              <Section title="Governing Law">
+              <Section title="8. Limitation of Liability">
                 <p>
-                  These Terms shall be governed by and construed in accordance with the laws of the
-                  jurisdiction in which our company operates, without regard to its conflict of law
-                  provisions.
+                  BeeTech Solutions' liability is strictly limited to the amount paid for the
+                  specific service rendered. We accept no liability for any indirect,
+                  incidental, or consequential damages.
                 </p>
                 <p>
-                  Any disputes arising from these Terms or your use of our services shall be resolved in
-                  the courts of the applicable jurisdiction.
-                </p>
-              </Section>
-
-              <Section title="Changes to Terms">
-                <p>
-                  We reserve the right to modify or replace these Terms at any time at our sole discretion.
-                  We will provide notice of any material changes by posting the new Terms on this page and
-                  updating the "Last updated" date.
-                </p>
-                <p>
-                  Your continued use of our services after any changes constitutes acceptance of the new
-                  Terms. If you do not agree to the new Terms, you must stop using our services.
+                  We do not make guarantees regarding specific business results, search engine
+                  rankings, or increases in website traffic arising from our services.
                 </p>
               </Section>
 
-              <Section title="Contact Information">
+              <Section title="9. Termination">
                 <p>
-                  If you have any questions about these Terms of Service, please contact us:
+                  <strong>Client Termination:</strong> Clients may end a project at any time
+                  by providing written notice. Payment will be due for all work completed up
+                  to the date of termination.
+                </p>
+                <p>
+                  <strong>Our Termination:</strong> We reserve the right to discontinue
+                  services in cases of non-payment, unreasonable demands, or breach of these
+                  terms.
+                </p>
+              </Section>
+
+              <Section title="10. Governing Law">
+                <p>
+                  These Terms and Conditions are governed by and interpreted in accordance with
+                  the laws of Sri Lanka. Any disputes arising from these terms will be resolved
+                  through mediation or through the courts of Sri Lanka.
+                </p>
+              </Section>
+
+              <Section title="11. Contact Information">
+                <p>
+                  If you have any questions about these Terms and Conditions, please reach out
+                  to us:
                 </p>
                 <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg mt-4">
                   <p className="mb-2">
-                    <strong>Email:</strong> legal@yourcompany.com
+                    <strong>Email:</strong> info@beetech.lk
                   </p>
                   <p className="mb-2">
-                    <strong>Phone:</strong> +1 (555) 123-4567
+                    <strong>Phone:</strong> +94 777 924 732
                   </p>
                   <p>
-                    <strong>Address:</strong> 123 Business Street, Suite 100, City, State 12345
+                    <strong>Address:</strong> 281/D/5, St Marys Road, Welivita, Kaduwela
                   </p>
                 </div>
               </Section>
+
             </div>
           </div>
         </section>

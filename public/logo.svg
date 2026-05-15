@@ -1,28 +1,15 @@
-<svg width="400" height="500" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Bee Icon -->
-  <g id="bee">
-    <!-- Top wing (left) -->
-    <ellipse cx="190" cy="195" rx="35" ry="25" fill="#F5B800" transform="rotate(-25 190 195)"/>
-
-    <!-- Top wing (right small) -->
-    <ellipse cx="270" cy="175" rx="20" ry="15" fill="#F5B800" transform="rotate(25 270 175)"/>
-
-    <!-- Body segments -->
-    <!-- Bottom left segment -->
-    <ellipse cx="215" cy="285" rx="30" ry="35" fill="#F5B800" transform="rotate(-45 215 285)"/>
-
-    <!-- Middle right segment -->
-    <ellipse cx="280" cy="240" rx="35" ry="40" fill="#F5B800" transform="rotate(25 280 240)"/>
-
-    <!-- Top body segment (head area) -->
-    <ellipse cx="245" cy="210" rx="28" ry="32" fill="#F5B800" transform="rotate(5 245 210)"/>
-
-    <!-- White stripes on body -->
-    <path d="M 225 245 Q 240 235 255 245 Q 265 250 270 260 Q 260 265 250 265 Q 235 265 225 260 Z" fill="#FFF5E1"/>
-    <path d="M 240 270 Q 250 265 260 272 Q 265 278 262 285 Q 252 287 242 285 Q 237 280 240 270 Z" fill="#FFF5E1"/>
-  </g>
-
-  <!-- Company Name -->
-  <text x="200" y="360" font-family="Arial, sans-serif" font-size="48" font-weight="900" fill="#3D3D3D" text-anchor="middle">BEETECH</text>
-  <text x="200" y="410" font-family="Arial, sans-serif" font-size="48" font-weight="900" fill="#3D3D3D" text-anchor="middle">SOLUTIONS</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Upper wing (large, tilted top-left) -->
+  <ellipse cx="72" cy="55" rx="46" ry="22" fill="#FBBF24" transform="rotate(-38 72 55)"/>
+  <!-- Lower wing (smaller, less angled) -->
+  <ellipse cx="55" cy="98" rx="30" ry="15" fill="#FBBF24" transform="rotate(-18 55 98)"/>
+  <!-- Thorax (small connector) -->
+  <circle cx="98" cy="88" r="14" fill="#FBBF24"/>
+  <!-- Abdomen (large circle, right-center) -->
+  <circle cx="130" cy="118" r="54" fill="#FBBF24"/>
+  <!-- White stripe arcs -->
+  <path d="M 84 96 Q 130 78 176 96" stroke="white" stroke-width="7" stroke-linecap="round"/>
+  <path d="M 79 118 Q 130 100 181 118" stroke="white" stroke-width="7" stroke-linecap="round"/>
+  <!-- Stinger / tail -->
+  <polygon points="90,155 52,182 96,168" fill="#FBBF24"/>
 </svg>
