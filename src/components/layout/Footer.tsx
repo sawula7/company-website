@@ -112,15 +112,15 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3 text-sm">
                 <MapPin className="h-5 w-5 text-primary-500 flex-shrink-0 mt-0.5" />
-                <span>123 Tech Street, San Francisco, CA 94105</span>
+                <span>281/D/5, St Marys Road, Welivita, Kaduwela</span>
               </li>
               <li className="flex items-center space-x-3 text-sm">
                 <Phone className="h-5 w-5 text-primary-500 flex-shrink-0" />
-                <span>+1 (555) 123-4567</span>
+                <span>+94 777 924 732</span>
               </li>
               <li className="flex items-center space-x-3 text-sm">
                 <Mail className="h-5 w-5 text-primary-500 flex-shrink-0" />
-                <span>hello@techflow.com</span>
+                <span>info@beetech.lk</span>
               </li>
             </ul>
           </div>
