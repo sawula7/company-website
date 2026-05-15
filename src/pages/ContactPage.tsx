@@ -205,10 +205,10 @@ export function ContactPage() {
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
                       <a
-                        href="mailto:hello@techflow.com"
+                        href="mailto:info@beetech.lk"
                         className="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors"
                       >
-                        hello@techflow.com
+                        info@beetech.lk
                       </a>
                     </div>
                   </Card>
@@ -220,10 +220,10 @@ export function ContactPage() {
                     <div>
                       <h3 className="font-semibold mb-1">Phone</h3>
                       <a
-                        href="tel:+15551234567"
+                        href="tel:+94777924732"
                         className="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors"
                       >
-                        +1 (555) 123-4567
+                        +94 777 924 732
                       </a>
                     </div>
                   </Card>
@@ -235,8 +235,8 @@ export function ContactPage() {
                     <div>
                       <h3 className="font-semibold mb-1">Office</h3>
                       <p className="text-gray-600 dark:text-gray-400">
-                        123 Tech Street<br />
-                        San Francisco, CA 94105
+                        281/D/5, St Marys Road<br />
+                        Welivita, Kaduwela
                       </p>
                     </div>
                   </Card>
