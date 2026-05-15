@@ -212,13 +212,13 @@ export function TermsOfServicePage() {
                 </p>
                 <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg mt-4">
                   <p className="mb-2">
-                    <strong>Email:</strong> legal@yourcompany.com
+                    <strong>Email:</strong> info@beetech.lk
                   </p>
                   <p className="mb-2">
-                    <strong>Phone:</strong> +1 (555) 123-4567
+                    <strong>Phone:</strong> +94 777 924 732
                   </p>
                   <p>
-                    <strong>Address:</strong> 123 Business Street, Suite 100, City, State 12345
+                    <strong>Address:</strong> 281/D/5, St Marys Road, Welivita, Kaduwela
                   </p>
                 </div>
               </Section>
