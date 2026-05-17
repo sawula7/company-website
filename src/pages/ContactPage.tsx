@@ -36,26 +36,28 @@ export function ContactPage() {
 
   const recaptchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
-  // Initialize reCAPTCHA
+  // Load reCAPTCHA v3 dynamically with correct render=SITE_KEY parameter
   useEffect(() => {
     if (!recaptchaSiteKey) {
-      console.warn('reCAPTCHA site key not found. Form submission will work without reCAPTCHA verification.');
       setRecaptchaReady(true);
       return;
     }
 
-    const loadRecaptcha = () => {
-      if (window.grecaptcha) {
-        window.grecaptcha.ready(() => {
-          setRecaptchaReady(true);
-        });
-      } else {
-        // Retry after a short delay if grecaptcha is not loaded yet
-        setTimeout(loadRecaptcha, 100);
-      }
-    };
+    const scriptId = 'recaptcha-v3-script';
+    if (document.getElementById(scriptId)) {
+      window.grecaptcha?.ready(() => setRecaptchaReady(true));
+      return;
+    }
 
-    loadRecaptcha();
+    const script = document.createElement('script');
+    script.id = scriptId;
+    script.src = `https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`;
+    script.async = true;
+    script.defer = true;
+    script.onload = () => {
+      window.grecaptcha.ready(() => setRecaptchaReady(true));
+    };
+    document.head.appendChild(script);
   }, [recaptchaSiteKey]);
 
   const validateForm = (): boolean => {
