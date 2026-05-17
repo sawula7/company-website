@@ -3,7 +3,7 @@ import type { FormEvent } from 'react';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { PageTransition } from '../components/layout/PageTransition';
 import { Card, Button, Toast, ToastProvider, ToastContainer } from '../components/ui';
-import { mockApi } from '../api/mockApi';
+import { sendContactEmails } from '../api/emailService';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 interface FormData {
@@ -115,34 +115,24 @@ export function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      // Execute reCAPTCHA to get token
-      const recaptchaToken = await executeRecaptcha();
+      await executeRecaptcha();
 
-      const response = await mockApi.submitContactForm({
+      await sendContactEmails({
         name: formData.name,
         email: formData.email,
         company: formData.company,
         message: formData.message,
-        recaptchaToken: recaptchaToken || undefined,
       });
 
-      if (response.success) {
-        setToastMessage({
-          title: 'Success!',
-          description: response.message,
-          variant: 'success',
-        });
-        setToastOpen(true);
+      setToastMessage({
+        title: 'Message Sent!',
+        description: 'Thank you for contacting us. A confirmation email has been sent to you.',
+        variant: 'success',
+      });
+      setToastOpen(true);
 
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          company: '',
-          message: '',
-        });
-        setErrors({});
-      }
+      setFormData({ name: '', email: '', company: '', message: '' });
+      setErrors({});
     } catch (error) {
       setToastMessage({
         title: 'Error',
