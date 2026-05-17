@@ -79,8 +79,8 @@ export function Footer() {
               <li className="text-sm">Mobile Development</li>
               <li className="text-sm">UI/UX Design</li>
               <li className="text-sm">Cloud Solutions</li>
-              <li className="text-sm">AI & Machine Learning</li>
-              <li className="text-sm">Software Consulting</li>
+              <li className="text-sm">E-Commerce Platforms</li>
+              <li className="text-sm">Application Development</li>
             </ul>
           </div>
 
