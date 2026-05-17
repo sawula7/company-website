@@ -60,7 +60,7 @@ export function AboutPage() {
         <div className="container-custom relative z-10">
           <div className="text-center max-w-3xl mx-auto space-y-6 animate-slide-up">
             <h1 className="text-4xl md:text-6xl font-bold">
-              About <span className="gradient-text">BeeTech</span>
+              About <span className="gradient-text">Beetech</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400">
               Building the future of software, one project at a time
