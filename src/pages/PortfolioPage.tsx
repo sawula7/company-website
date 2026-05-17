@@ -4,10 +4,7 @@ import { PageTransition } from '../components/layout/PageTransition';
 import { Card, LoadingSpinner } from '../components/ui';
 import { mockApi } from '../api/mockApi';
 import type { Project } from '../types';
-import { projectCategories } from '../constants/projects';
-import { useStore } from '../store/useStore';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import { cn } from '../utils/cn';
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const [ref, isVisible] = useIntersectionObserver({ freezeOnceVisible: true });
@@ -24,20 +21,13 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           alt={project.title}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
-        {project.featured && (
-          <div className="absolute top-4 right-4">
-            <span className="px-3 py-1 bg-accent-500 text-white text-xs font-semibold rounded-full shadow-lg">
-              Featured
-            </span>
-          </div>
-        )}
       </div>
       <div className="p-6 space-y-4">
         <div className="flex items-center justify-between">
           <span className="text-xs font-semibold px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-950 text-primary-700 dark:text-primary-300">
             {project.category}
           </span>
-          {project.link && (
+          {project.link && project.link !== '#' && (
             <a
               href={project.link}
               target="_blank"
@@ -80,16 +70,13 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
 export function PortfolioPage() {
   const [projects, setProjects] = useState<Project[]>([]);
-  const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
-  const { selectedProjectCategory, setSelectedProjectCategory } = useStore();
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
         const data = await mockApi.getProjects();
         setProjects(data);
-        setFilteredProjects(data);
       } catch (error) {
         console.error('Error fetching projects:', error);
       } finally {
@@ -99,14 +86,6 @@ export function PortfolioPage() {
 
     fetchProjects();
   }, []);
-
-  useEffect(() => {
-    if (selectedProjectCategory === 'All') {
-      setFilteredProjects(projects);
-    } else {
-      setFilteredProjects(projects.filter((p) => p.category === selectedProjectCategory));
-    }
-  }, [selectedProjectCategory, projects]);
 
   if (loading) {
     return (
@@ -132,33 +111,8 @@ export function PortfolioPage() {
               Our <span className="gradient-text">Portfolio</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400">
-              Explore our successful projects and the impact we've made for clients worldwide
+              Explore our projects and the impact we've made for our clients
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Filter Section */}
-      <section className="py-8 bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800 sticky top-16 md:top-20 z-40 backdrop-blur-lg bg-white/80 dark:bg-gray-950/80">
-        <div className="container-custom">
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            {projectCategories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedProjectCategory(category)}
-                className={cn(
-                  'px-6 py-2 rounded-full font-medium transition-all duration-300',
-                  selectedProjectCategory === category
-                    ? 'bg-primary-500 text-white shadow-lg scale-105'
-                    : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
-                )}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-          <div className="text-center mt-4 text-sm text-gray-600 dark:text-gray-400">
-            Showing {filteredProjects.length} project{filteredProjects.length !== 1 ? 's' : ''}
           </div>
         </div>
       </section>
@@ -166,19 +120,11 @@ export function PortfolioPage() {
       {/* Projects Grid */}
       <section className="section-padding bg-white dark:bg-gray-950">
         <div className="container-custom">
-          {filteredProjects.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredProjects.map((project, index) => (
-                <ProjectCard key={project.id} project={project} index={index} />
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-20">
-              <p className="text-xl text-gray-600 dark:text-gray-400">
-                No projects found in this category.
-              </p>
-            </div>
-          )}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <ProjectCard key={project.id} project={project} index={index} />
+            ))}
+          </div>
         </div>
       </section>
     </PageTransition>

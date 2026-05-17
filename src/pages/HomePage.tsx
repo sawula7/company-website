@@ -103,7 +103,7 @@ function FeaturedProjects({ projects }: { projects: Project[] }) {
         <div className={`text-center max-w-3xl mx-auto mb-16 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Featured Work</h2>
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            Showcasing our best projects and success stories
+            Showcasing our work and the impact we've made for our clients
           </p>
         </div>
 
@@ -304,7 +304,7 @@ export function HomePage() {
     const fetchData = async () => {
       try {
         const [projectsData, testimonialsData, servicesData] = await Promise.all([
-          mockApi.getFeaturedProjects(),
+          mockApi.getProjects(),
           mockApi.getTestimonials(),
           mockApi.getServices(),
         ]);
