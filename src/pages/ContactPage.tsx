@@ -244,23 +244,16 @@ export function ContactPage() {
 
                 {/* Google Map */}
                 <Card className="overflow-hidden p-0 h-64">
-                  {import.meta.env.VITE_GOOGLE_MAPS_KEY ? (
-                    <iframe
-                      title="BeeTech Solutions Location"
-                      src={`https://www.google.com/maps/embed/v1/place?key=${import.meta.env.VITE_GOOGLE_MAPS_KEY}&q=281+St+Marys+Road,+Welivita,+Kaduwela,+Sri+Lanka&zoom=16`}
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-primary-100 via-secondary-100 to-accent-100 dark:from-primary-950 dark:via-secondary-950 dark:to-accent-950 flex flex-col items-center justify-center gap-2">
-                      <MapPin className="h-12 w-12 text-primary-500 opacity-50" />
-                      <p className="text-sm text-gray-500 dark:text-gray-400">Map unavailable — add VITE_GOOGLE_MAPS_KEY to .env</p>
-                    </div>
-                  )}
+                  <iframe
+                    title="BeeTech Solutions Location"
+                    src="https://maps.google.com/maps?q=Welivita,+Kaduwela,+Sri+Lanka&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
                 </Card>
               </div>
 

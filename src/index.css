@@ -96,7 +96,7 @@ html {
 /* WhatsApp Fixed Button */
 .fixed-btn-mobile {
   position: fixed;
-  bottom: 24px;
+  bottom: 90px;
   right: 24px;
   z-index: 50;
   animation: fadeInUp 0.5s ease-in-out;
@@ -148,7 +148,7 @@ html {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .fixed-btn-mobile {
-    bottom: 20px;
+    bottom: 86px;
     right: 20px;
   }
 
